@@ -655,6 +655,7 @@ mod tests {
                 status = banks_client.get_transaction_status(signature).await?;
             }
             assert!(status.unwrap().err.is_none());
+            
             assert_eq!(banks_client.get_balance(bob_pubkey).await?, 1);
             Ok(())
         })
